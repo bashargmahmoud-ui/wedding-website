@@ -1524,19 +1524,14 @@
             }
         }
 
-        // ---- Chat (Demo — replace with actual API call) ----
+        // ---- Chat (Claude API) ----
         const chatMessages = document.getElementById('chatMessages');
         const chatInput = document.getElementById('chatInput');
         const chatSend = document.getElementById('chatSend');
         const chatSuggestions = document.getElementById('chatSuggestions');
 
-        // Demo responses (replace with LLM API call)
-        const demoResponses = {
-            "what's the dress code?": "The dress code is formal attire. Think elegant and refined — suits, evening dresses, or traditional formal wear. Since it's a July evening in Beirut, we recommend light, breathable fabrics. Ladies, block heels or wedges are a good idea for any outdoor portions!",
-            "hotel recommendations": "We recommend staying in Downtown Beirut or Achrafieh for proximity to the venue. Some great options include Le Gray Beirut (luxury), Sofitel Beirut Le Gabriel (upscale), and Hotel Albergo (boutique charm). A hotel block with special rates will be announced soon!",
-            "best restaurants in beirut": "Beirut has an incredible food scene! Some favorites: Em Sherif for traditional Lebanese fine dining, Liza Beirut for a stunning atmosphere, Baron for modern Lebanese, Tawlet for a daily-changing menu by regional home cooks, and Enab for the best mezze in Achrafieh. Don't miss the street food in Mar Mikhael too!",
-            "is lebanon safe to visit?": "Lebanon is generally safe for tourists, especially in Beirut and the main tourist areas. Like any city, use common sense — stick to well-traveled areas, keep valuables secure, and follow local advice. The Lebanese people are incredibly warm and hospitable. You'll feel welcome from the moment you arrive!"
-        };
+        // Conversation history for context
+        let chatHistory = [];
 
         function addMessage(text, isUser) {
             const msg = document.createElement('div');
@@ -1546,19 +1541,59 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        function handleChat(text) {
+        function addTypingIndicator() {
+            const msg = document.createElement('div');
+            msg.className = 'chat-message bot';
+            msg.id = 'typingIndicator';
+            msg.textContent = '...';
+            msg.style.opacity = '0.5';
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const el = document.getElementById('typingIndicator');
+            if (el) el.remove();
+        }
+
+        async function handleChat(text) {
             if (!text.trim()) return;
             addMessage(text, true);
             chatInput.value = '';
+            chatSend.disabled = true;
             chatSuggestions.style.display = 'none';
 
-            // Simulate typing delay
-            setTimeout(() => {
-                const lower = text.toLowerCase().trim().replace(/[?!.]/g, '');
-                const response = demoResponses[lower] ||
-                    "Thanks for asking! In the full version, I'll be connected to an AI that can answer any question about the wedding or Lebanon. For now, check the sections above for details, or reach out to Caline & Bashar directly!";
-                addMessage(response, false);
-            }, 800);
+            // Add to history
+            chatHistory.push({ role: 'user', content: text });
+
+            addTypingIndicator();
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: text,
+                        history: chatHistory.slice(-6) // last 6 messages for context
+                    })
+                });
+
+                removeTypingIndicator();
+
+                if (response.ok) {
+                    const data = await response.json();
+                    addMessage(data.reply, false);
+                    chatHistory.push({ role: 'assistant', content: data.reply });
+                } else {
+                    addMessage("I'm having trouble connecting right now. Please try again in a moment!", false);
+                }
+            } catch (err) {
+                removeTypingIndicator();
+                addMessage("I'm having trouble connecting right now. Please try again in a moment!", false);
+            }
+
+            chatSend.disabled = false;
+            chatInput.focus();
         }
 
         function askSuggestion(btn) {
