@@ -1,0 +1,14 @@
+{
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "functions": {
+    "api/rsvp.js": {
+      "memory": 128,
+      "maxDuration": 10
+    },
+    "api/chat.js": {
+      "memory": 128,
+      "maxDuration": 15
+    }
+  }
+}

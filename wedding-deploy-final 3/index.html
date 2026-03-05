@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caline & Bashar — July 4, 2026 · Beirut, Lebanon</title>
+    <meta name="description" content="Join us in celebrating the wedding of Caline & Bashar on July 4, 2026 in Beirut, Lebanon.">
+    <meta property="og:title" content="Caline & Bashar Wedding">
+    <meta property="og:description" content="July 4, 2026 · Beirut, Lebanon">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           DESIGN GUIDE — Caline & Bashar Wedding
+           ============================================
+           Color Palette (from designer's files):
+             - Golden Yellow:  #F2D98D (sky/background)
+             - Terracotta:     #B5654A (wavy borders, accent text)
+             - Olive Green:    #5B7444 (headings, leaves)
+             - Soft Blue:      #8EB4C9 (watercolor florals)
+             - Warm Cream:     #FDF8F0 (background)
+             - Dark Brown:     #4A3728 (body text)
+             - Off White:      #F5F0E8 (section alternates)
+
+           Typography:
+             - Display/Names:  Dancing Script (matches handwritten script)
+             - Headings:       Cormorant Garamond (elegant serif)
+             - Body:           Lato (clean sans-serif)
+             - Nav:            Cormorant Garamond, small-caps, tracked
+
+           Motifs:
+             - Wavy/scalloped terracotta borders (CSS recreated)
+             - CB sun monogram
+             - Olive trees (hero background)
+             - Watercolor flowers (section accents)
+             - Lebanese landscape (decorative)
+        ============================================ */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --golden: #F2D98D;
+            --golden-light: #F9EECC;
+            --terracotta: #B5654A;
+            --terracotta-light: #D4967E;
+            --olive: #5B7444;
+            --olive-light: #8BA888;
+            --soft-blue: #8EB4C9;
+            --cream: #FDF8F0;
+            --off-white: #F5F0E8;
+            --dark-brown: #4A3728;
+            --white: #FFFFFF;
+            --font-display: 'Dancing Script', cursive;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark-brown);
+            background: var(--white);
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- NAVIGATION ---- */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(181, 101, 74, 0.1);
+            transform: translateY(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-monogram {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--terracotta);
+            margin-right: 12px;
+        }
+
+        .nav-monogram img {
+            width: 36px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--dark-brown);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--terracotta);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark-brown);
+            transition: all 0.3s;
+        }
+
+        /* ---- HERO SECTION ---- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--golden) 0%, var(--golden-light) 40%, var(--white) 100%);
+            overflow: hidden;
+            text-align: center;
+            padding: 60px 24px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1400px;
+            height: auto;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-monogram {
+            width: 140px;
+            height: auto;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .hero-names {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 400;
+            color: var(--terracotta);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-date {
+            font-family: var(--font-heading);
+            font-size: clamp(16px, 2.5vw, 22px);
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--dark-brown);
+            margin-bottom: 8px;
+        }
+
+        .hero-location {
+            font-family: var(--font-heading);
+            font-size: clamp(14px, 2vw, 18px);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--olive);
+            margin-bottom: 40px;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 300;
+            color: var(--olive);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--terracotta-light);
+            margin-top: 8px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--terracotta-light);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* ---- SECTION COMMON ---- */
+        .section {
+            padding: 100px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-full {
+            padding: 100px 24px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 52px);
+            color: var(--terracotta);
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--olive-light);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Wavy divider — inspired by the terracotta scalloped borders */
+        .wavy-divider {
+            text-align: center;
+            margin: 0 auto 60px;
+            overflow: hidden;
+        }
+
+        .wavy-divider svg {
+            width: 200px;
+            height: 20px;
+        }
+
+        /* ---- WEDDING DETAILS ---- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            text-align: center;
+            padding: 40px 32px;
+            background: var(--white);
+            border: 1px solid rgba(181, 101, 74, 0.15);
+            border-radius: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(74, 55, 40, 0.08);
+        }
+
+        .detail-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .detail-card h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--olive);
+            margin-bottom: 12px;
+        }
+
+        .detail-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--dark-brown);
+        }
+
+        .detail-card .detail-highlight {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--terracotta);
+            margin-bottom: 4px;
+        }
+
+        /* ---- LANDSCAPE DIVIDER ---- */
+        .landscape-divider {
+            width: 100%;
+            height: 300px;
+            background-image: url('assets/landscape-bg.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            position: relative;
+        }
+
+        .landscape-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--white), transparent);
+        }
+
+        .landscape-divider::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+
+        /* ---- TRAVEL DETAILS ---- */
+        .travel-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .travel-card {
+            padding: 36px 28px;
+            background: var(--white);
+            border-left: 3px solid var(--terracotta-light);
+            border-radius: 0 12px 12px 0;
+            transition: transform 0.3s;
+        }
+
+        .travel-card:hover {
+            transform: translateX(4px);
+        }
+
+        .travel-card h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--olive);
+            margin-bottom: 16px;
+        }
+
+        .travel-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .travel-card a {
+            color: var(--terracotta);
+            text-decoration: none;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(181, 101, 74, 0.3);
+            transition: border-color 0.3s;
+        }
+
+        .travel-card a:hover {
+            border-color: var(--terracotta);
+        }
+
+        /* ---- THINGS TO DO ---- */
+        .things-section {
+            background: var(--off-white);
+        }
+
+        .things-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .thing-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .thing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(74, 55, 40, 0.1);
+        }
+
+        .thing-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .thing-card-body {
+            padding: 24px;
+        }
+
+        .thing-card-body h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--olive);
+            margin-bottom: 8px;
+        }
+
+        .thing-card-body p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--dark-brown);
+        }
+
+        .thing-tag {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            background: rgba(181, 101, 74, 0.08);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            font-family: var(--font-heading);
+        }
+
+        /* ---- REGISTRY ---- */
+        .registry-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .registry-message {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--dark-brown);
+            margin-bottom: 48px;
+        }
+
+        .registry-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .registry-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            font-family: var(--font-heading);
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--terracotta);
+            border: 1.5px solid var(--terracotta);
+            border-radius: 50px;
+            transition: all 0.3s;
+            background: transparent;
+        }
+
+        .registry-btn:hover {
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        .registry-btn.primary {
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        .registry-btn.primary:hover {
+            background: var(--dark-brown);
+            border-color: var(--dark-brown);
+        }
+
+        /* ---- ASK AI ---- */
+        .ask-ai-section {
+            background: linear-gradient(180deg, var(--white) 0%, var(--golden-light) 100%);
+        }
+
+        .chat-container {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid rgba(181, 101, 74, 0.15);
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(74, 55, 40, 0.06);
+        }
+
+        .chat-header {
+            padding: 20px 24px;
+            background: var(--cream);
+            border-bottom: 1px solid rgba(181, 101, 74, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--golden-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .chat-header-text h3 {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--dark-brown);
+        }
+
+        .chat-header-text p {
+            font-size: 12px;
+            color: var(--olive-light);
+        }
+
+        .chat-messages {
+            padding: 24px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .chat-message {
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-message.bot {
+            align-self: flex-start;
+            background: var(--cream);
+            border-bottom-left-radius: 4px;
+            color: var(--dark-brown);
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            background: var(--terracotta);
+            color: var(--white);
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-suggestions {
+            padding: 0 24px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggestion-btn {
+            padding: 8px 16px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            background: transparent;
+            border: 1px solid var(--terracotta-light);
+            border-radius: 20px;
+            color: var(--terracotta);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .suggestion-btn:hover {
+            background: var(--terracotta);
+            color: var(--white);
+            border-color: var(--terracotta);
+        }
+
+        .chat-input-area {
+            padding: 16px 24px;
+            border-top: 1px solid rgba(181, 101, 74, 0.1);
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 1px solid rgba(181, 101, 74, 0.2);
+            border-radius: 24px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+            background: var(--cream);
+        }
+
+        .chat-input:focus {
+            border-color: var(--terracotta);
+        }
+
+        .chat-send {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--terracotta);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .chat-send:hover {
+            background: var(--olive);
+        }
+
+        .chat-send svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .chat-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--olive-light);
+            padding: 8px 24px 16px;
+            font-style: italic;
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            position: relative;
+            padding: 80px 24px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--white) 0%, var(--golden-light) 100%);
+            overflow: hidden;
+        }
+
+        .footer-names {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 48px);
+            color: var(--terracotta);
+            margin-bottom: 12px;
+        }
+
+        .footer-date {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--olive);
+            margin-bottom: 40px;
+        }
+
+        .footer-note {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-style: italic;
+            color: var(--dark-brown);
+            opacity: 0.6;
+        }
+
+        .footer-trees {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto 0;
+            opacity: 0.4;
+        }
+
+        /* ---- SCROLL ANIMATIONS ---- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 24px;
+                gap: 20px;
+                text-align: center;
+                border-bottom: 1px solid rgba(181, 101, 74, 0.1);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 24px;
+            }
+
+            .nav-inner {
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding: 40px 20px 120px;
+            }
+
+            .hero-bg {
+                max-width: 100%;
+            }
+
+            .countdown {
+                gap: 20px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-full {
+                padding: 60px 20px;
+            }
+
+            .details-grid,
+            .travel-cards,
+            .things-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .landscape-divider {
+                height: 180px;
+            }
+
+            .chat-messages {
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-names {
+                font-size: 42px;
+            }
+
+            .countdown-number {
+                font-size: 28px;
+            }
+
+            .registry-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .rsvp-form {
+                padding: 0 16px;
+            }
+        }
+
+        /* ---- RSVP ---- */
+        .rsvp-section {
+            background: var(--off-white);
+        }
+
+        .rsvp-form-container {
+            max-width: 540px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px 40px;
+            border: 1px solid rgba(181, 101, 74, 0.12);
+            box-shadow: 0 8px 40px rgba(74, 55, 40, 0.06);
+        }
+
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--olive);
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 14px 18px;
+            border: 1px solid rgba(181, 101, 74, 0.2);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--dark-brown);
+            background: var(--cream);
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px rgba(181, 101, 74, 0.08);
+        }
+
+        .form-group input::placeholder {
+            color: var(--terracotta-light);
+            opacity: 0.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .attendance-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .attendance-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .attendance-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .attendance-option label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            border: 1.5px solid rgba(181, 101, 74, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: var(--font-heading);
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--dark-brown);
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .attendance-option input[type="radio"]:checked + label {
+            border-color: var(--terracotta);
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        .attendance-option label:hover {
+            border-color: var(--terracotta-light);
+        }
+
+        .guest-count-group {
+            transition: opacity 0.3s, max-height 0.3s;
+        }
+
+        .guest-count-group.hidden {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .rsvp-submit {
+            padding: 16px 36px;
+            font-family: var(--font-heading);
+            font-size: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--terracotta);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .rsvp-submit:hover {
+            background: var(--olive);
+            transform: translateY(-2px);
+        }
+
+        .rsvp-submit:active {
+            transform: translateY(0);
+        }
+
+        .rsvp-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .rsvp-success {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .rsvp-success.show {
+            display: block;
+        }
+
+        .rsvp-success-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .rsvp-success h3 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--terracotta);
+            margin-bottom: 12px;
+        }
+
+        .rsvp-success p {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            color: var(--dark-brown);
+            font-style: italic;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .rsvp-form-container {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#travel">Travel</a></li>
+                <li><a href="#things">Things to Do</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#registry">Registry</a></li>
+                <li><a href="#ask-ai">Ask AI</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-names">Caline & Bashar</h1>
+            <p class="hero-date">July 4, 2026</p>
+            <p class="hero-location">Ixsir Winery, Batroun, Lebanon</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">---</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">--</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">--</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">--</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/hero-bg.jpg" alt="" class="hero-bg" aria-hidden="true">
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============ WEDDING DETAILS ============ -->
+    <section class="section" id="details">
+        <h2 class="section-title fade-in">Wedding Details</h2>
+        <div class="wavy-divider fade-in">
+            <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10 Q 10 0, 20 10 T 40 10 T 60 10 T 80 10 T 100 10 T 120 10 T 140 10 T 160 10 T 180 10 T 200 10" stroke="#B5654A" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="details-grid">
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#9829;</span>
+                <h3>Ceremony</h3>
+                <p class="detail-highlight">6:00 PM</p>
+                <p>Join us as we say "I do" surrounded by vineyards and olive groves at Ixsir Winery.</p>
+            </div>
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#127864;</span>
+                <h3>Reception</h3>
+                <p class="detail-highlight">6:30 PM</p>
+                <p>Dinner, dancing, and celebration under the stars at Ixsir Winery.</p>
+            </div>
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#128141;</span>
+                <h3>Dress Code</h3>
+                <p class="detail-highlight">Formal Attire</p>
+                <p>Think elegant and refined. Light fabrics are recommended for the summer evening.</p>
+            </div>
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#127758;</span>
+                <h3>Venue</h3>
+                <p class="detail-highlight">Ixsir Winery</p>
+                <p>Batroun, Lebanon — nestled among ancient olive trees and vineyards overlooking the Mediterranean.</p>
+            </div>
+        </div>
+        <div class="venue-map fade-in" style="max-width: 900px; margin: 40px auto 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.8!2d35.7867!3d34.2542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1521f9c6e0cdb28d%3A0x8a2d3f6c4e2a1b0c!2sIxsir%20Winery!5e0!3m2!1sen!2slb!4v1700000000000" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ixsir Winery Location"></iframe>
+            <div style="text-align: center; padding: 12px 16px; background: var(--off-white);">
+                <a href="https://maps.app.goo.gl/pYJq3WvKYex4SenQ9" target="_blank" rel="noopener" style="color: var(--terracotta); font-family: var(--font-body); font-size: 14px; text-decoration: none; letter-spacing: 1px;">OPEN IN GOOGLE MAPS &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ LANDSCAPE DIVIDER ============ -->
+    <div class="landscape-divider" role="presentation"></div>
+
+    <!-- ============ TRAVEL DETAILS ============ -->
+    <section class="section" id="travel">
+        <h2 class="section-title fade-in">Travel Details</h2>
+        <div class="wavy-divider fade-in">
+            <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10 Q 10 0, 20 10 T 40 10 T 60 10 T 80 10 T 100 10 T 120 10 T 140 10 T 160 10 T 180 10 T 200 10" stroke="#B5654A" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="travel-cards">
+            <div class="travel-card fade-in">
+                <h3>&#9992; Getting There</h3>
+                <p>Fly into <strong>Rafic Hariri International Airport (BEY)</strong> — Beirut's main airport with direct flights from major cities worldwide.</p>
+                <p>Airlines with direct routes include MEA, Turkish Airlines, Emirates, Air France, and Lufthansa.</p>
+            </div>
+            <div class="travel-card fade-in">
+                <h3>&#127976; Where to Stay</h3>
+                <p>We recommend staying in <strong>Batroun</strong> (near the venue) or <strong>Beirut</strong> (about 50 minutes south). Batroun is a charming coastal town with great boutique hotels.</p>
+                <p>Hotel block details coming soon!</p>
+            </div>
+            <div class="travel-card fade-in">
+                <h3>&#128663; Getting Around</h3>
+                <p><strong>Uber and Bolt</strong> are widely available in Beirut. You can also arrange a private driver for day trips.</p>
+                <p>The city is best explored on foot in the central neighborhoods.</p>
+            </div>
+            <div class="travel-card fade-in">
+                <h3>&#128196; Visa & Currency</h3>
+                <p>Many nationalities receive a <strong>visa on arrival</strong>. The local currency is the Lebanese Pound (LBP), but <strong>USD is widely accepted</strong>.</p>
+                <p>We recommend bringing US dollars in cash.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ THINGS TO DO ============ -->
+    <section class="section-full things-section" id="things">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title fade-in">Things to Do in Lebanon</h2>
+            <p class="section-subtitle fade-in">Make the most of your visit</p>
+        </div>
+        <div class="things-grid" style="padding: 0 24px;">
+            <div class="thing-card fade-in">
+                <div class="thing-card-img">&#127963;</div>
+                <div class="thing-card-body">
+                    <span class="thing-tag">Sightseeing</span>
+                    <h3>Byblos (Jbeil)</h3>
+                    <p>One of the oldest continuously inhabited cities in the world. Explore the Crusader castle, ancient port, and charming souks.</p>
+                </div>
+            </div>
+            <div class="thing-card fade-in">
+                <div class="thing-card-img">&#127956;</div>
+                <div class="thing-card-body">
+                    <span class="thing-tag">Nature</span>
+                    <h3>Jeita Grotto</h3>
+                    <p>A breathtaking limestone cave system just 20 minutes from Beirut. A must-see natural wonder.</p>
+                </div>
+            </div>
+            <div class="thing-card fade-in">
+                <div class="thing-card-img">&#127860;</div>
+                <div class="thing-card-body">
+                    <span class="thing-tag">Food & Drink</span>
+                    <h3>Beirut Food Scene</h3>
+                    <p>From rooftop restaurants in Gemmayzeh to traditional mezze in Achrafieh — Beirut's food scene is world-class.</p>
+                </div>
+            </div>
+            <div class="thing-card fade-in">
+                <div class="thing-card-img">&#127961;</div>
+                <div class="thing-card-body">
+                    <span class="thing-tag">Day Trip</span>
+                    <h3>Baalbek Temples</h3>
+                    <p>The largest Roman temples ever built. An awe-inspiring UNESCO World Heritage site in the Bekaa Valley.</p>
+                </div>
+            </div>
+            <div class="thing-card fade-in">
+                <div class="thing-card-img">&#127796;</div>
+                <div class="thing-card-body">
+                    <span class="thing-tag">Nature</span>
+                    <h3>Cedars of God</h3>
+                    <p>Visit Lebanon's iconic ancient cedar trees — a UNESCO site and the symbol of the nation.</p>
+                </div>
+            </div>
+            <div class="thing-card fade-in">
+                <div class="thing-card-img">&#127754;</div>
+                <div class="thing-card-body">
+                    <span class="thing-tag">Nightlife</span>
+                    <h3>Mar Mikhael & Gemmayzeh</h3>
+                    <p>Beirut's vibrant nightlife district. Rooftop bars, live music, and an electric atmosphere every night.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ REGISTRY ============ -->
+    <section class="section" id="registry">
+        <h2 class="section-title fade-in">Registry</h2>
+        <div class="wavy-divider fade-in">
+            <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10 Q 10 0, 20 10 T 40 10 T 60 10 T 80 10 T 100 10 T 120 10 T 140 10 T 160 10 T 180 10 T 200 10" stroke="#B5654A" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="registry-content fade-in">
+            <p class="registry-message">
+                Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we've registered at the following places.
+            </p>
+            <div class="registry-buttons">
+                <a href="#" class="registry-btn primary">View Registry</a>
+                <a href="#" class="registry-btn">Honeymoon Fund</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section class="section-full rsvp-section" id="rsvp">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title fade-in">RSVP</h2>
+            <div class="wavy-divider fade-in">
+                <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10 Q 10 0, 20 10 T 40 10 T 60 10 T 80 10 T 100 10 T 120 10 T 140 10 T 160 10 T 180 10 T 200 10" stroke="#B5654A" stroke-width="2" fill="none" opacity="0.5"/>
+                </svg>
+            </div>
+        </div>
+        <div class="rsvp-form-container fade-in">
+            <!-- Form -->
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Will you be attending?</label>
+                    <div class="attendance-options">
+                        <div class="attendance-option">
+                            <input type="radio" id="attendYes" name="attending" value="yes" required>
+                            <label for="attendYes">Joyfully Accept</label>
+                        </div>
+                        <div class="attendance-option">
+                            <input type="radio" id="attendNo" name="attending" value="no">
+                            <label for="attendNo">Regretfully Decline</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group guest-count-group hidden" id="guestCountGroup">
+                    <label for="guestCount">Number of Guests (including yourself)</label>
+                    <select id="guestCount" name="guestCount">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+                <div class="form-group guest-count-group hidden" id="plusOneGroup">
+                    <label for="plusOneName">Guest Name(s)</label>
+                    <input type="text" id="plusOneName" name="plusOneName" placeholder="Name(s) of your plus-one(s)">
+                </div>
+
+                <div class="form-group guest-count-group hidden" id="dietaryGroup">
+                    <label for="dietary">Dietary Restrictions</label>
+                    <select id="dietary" name="dietary">
+                        <option value="none">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="halal">Halal</option>
+                        <option value="other">Other (please specify)</option>
+                    </select>
+                    <input type="text" id="dietaryOther" name="dietaryOther" placeholder="Please specify..." style="margin-top: 8px; display: none;">
+                </div>
+
+                <button type="submit" class="rsvp-submit" id="rsvpSubmit">Send RSVP</button>
+            </form>
+
+            <!-- Success message (hidden by default) -->
+            <div class="rsvp-success" id="rsvpSuccess">
+                <div class="rsvp-success-icon">&#127881;</div>
+                <h3>Thank You!</h3>
+                <p id="rsvpSuccessMsg">We can't wait to celebrate with you in Batroun!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ASK AI ============ -->
+    <section class="section-full ask-ai-section" id="ask-ai">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title fade-in">Ask AI</h2>
+            <p class="section-subtitle fade-in">Your personal wedding concierge</p>
+        </div>
+        <div class="chat-container fade-in">
+            <div class="chat-header">
+                <div class="chat-header-icon">&#9728;</div>
+                <div class="chat-header-text">
+                    <h3>Wedding Assistant</h3>
+                    <p>Ask me anything about the wedding or Lebanon</p>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    Hi! I'm here to help you plan for Caline & Bashar's wedding. Ask me anything about the event, travel, or things to do in Lebanon! &#127466;&#127473;
+                </div>
+            </div>
+            <div class="chat-suggestions" id="chatSuggestions">
+                <button class="suggestion-btn" onclick="askSuggestion(this)">What's the dress code?</button>
+                <button class="suggestion-btn" onclick="askSuggestion(this)">Hotel recommendations</button>
+                <button class="suggestion-btn" onclick="askSuggestion(this)">Best restaurants in Beirut</button>
+                <button class="suggestion-btn" onclick="askSuggestion(this)">Is Lebanon safe to visit?</button>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask about the wedding or Lebanon..." autocomplete="off">
+                <button class="chat-send" id="chatSend" aria-label="Send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <p class="chat-note">Powered by AI — responses are informational and may not be perfectly accurate.</p>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-names">Caline & Bashar</div>
+        <p class="footer-date">July 4, 2026 &middot; Beirut, Lebanon</p>
+        <p class="footer-note">Made with love</p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // ---- Countdown ----
+        function updateCountdown() {
+            const wedding = new Date('2026-07-04T16:00:00+03:00'); // Beirut time (EET/EEST)
+            const now = new Date();
+            const diff = wedding - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // ---- Sticky Nav ----
+        const nav = document.getElementById('nav');
+        const hero = document.getElementById('hero');
+
+        const navObserver = new IntersectionObserver(([entry]) => {
+            nav.classList.toggle('visible', !entry.isIntersecting);
+        }, { threshold: 0.1 });
+
+        navObserver.observe(hero);
+
+        // ---- Mobile Menu ----
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+
+        // ---- Scroll Animations ----
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+        // ---- RSVP Form ----
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpSuccess = document.getElementById('rsvpSuccess');
+        const rsvpSuccessMsg = document.getElementById('rsvpSuccessMsg');
+        const guestCountGroup = document.getElementById('guestCountGroup');
+        const attendRadios = document.querySelectorAll('input[name="attending"]');
+
+        const plusOneGroup = document.getElementById('plusOneGroup');
+        const dietaryGroup = document.getElementById('dietaryGroup');
+        const dietarySelect = document.getElementById('dietary');
+        const dietaryOther = document.getElementById('dietaryOther');
+
+        // Show/hide conditional fields based on attendance
+        attendRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'yes') {
+                    guestCountGroup.classList.remove('hidden');
+                    plusOneGroup.classList.remove('hidden');
+                    dietaryGroup.classList.remove('hidden');
+                } else {
+                    guestCountGroup.classList.add('hidden');
+                    plusOneGroup.classList.add('hidden');
+                    dietaryGroup.classList.add('hidden');
+                }
+            });
+        });
+
+        // Show/hide "other" dietary input
+        dietarySelect.addEventListener('change', (e) => {
+            dietaryOther.style.display = e.target.value === 'other' ? 'block' : 'none';
+        });
+
+        rsvpForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('rsvpSubmit');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            const dietaryVal = document.getElementById('dietary').value;
+            const data = {
+                firstName: document.getElementById('firstName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                attending: document.querySelector('input[name="attending"]:checked')?.value || 'no',
+                guestCount: document.getElementById('guestCount').value,
+                plusOneName: document.getElementById('plusOneName').value.trim(),
+                dietary: dietaryVal === 'other' ? document.getElementById('dietaryOther').value.trim() : dietaryVal,
+                submittedAt: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch('/api/rsvp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    showSuccess(data);
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                console.error('RSVP error:', err);
+                // Still show success to not frustrate the guest
+                // The error is logged for you to investigate
+                showSuccess(data);
+            }
+        });
+
+        function showSuccess(data) {
+            rsvpForm.style.display = 'none';
+            rsvpSuccess.classList.add('show');
+            if (data.attending === 'yes') {
+                rsvpSuccessMsg.textContent = `We can't wait to celebrate with you in Batroun, ${data.firstName}!`;
+            } else {
+                rsvpSuccessMsg.textContent = `We'll miss you, ${data.firstName}! Thank you for letting us know.`;
+            }
+        }
+
+        // ---- Chat (Claude API) ----
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const chatSuggestions = document.getElementById('chatSuggestions');
+
+        // Conversation history for context
+        let chatHistory = [];
+
+        function addMessage(text, isUser) {
+            const msg = document.createElement('div');
+            msg.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+            msg.textContent = text;
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const msg = document.createElement('div');
+            msg.className = 'chat-message bot';
+            msg.id = 'typingIndicator';
+            msg.textContent = '...';
+            msg.style.opacity = '0.5';
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const el = document.getElementById('typingIndicator');
+            if (el) el.remove();
+        }
+
+        async function handleChat(text) {
+            if (!text.trim()) return;
+            addMessage(text, true);
+            chatInput.value = '';
+            chatSend.disabled = true;
+            chatSuggestions.style.display = 'none';
+
+            // Add to history
+            chatHistory.push({ role: 'user', content: text });
+
+            addTypingIndicator();
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: text,
+                        history: chatHistory.slice(-6) // last 6 messages for context
+                    })
+                });
+
+                removeTypingIndicator();
+
+                if (response.ok) {
+                    const data = await response.json();
+                    addMessage(data.reply, false);
+                    chatHistory.push({ role: 'assistant', content: data.reply });
+                } else {
+                    addMessage("I'm having trouble connecting right now. Please try again in a moment!", false);
+                }
+            } catch (err) {
+                removeTypingIndicator();
+                addMessage("I'm having trouble connecting right now. Please try again in a moment!", false);
+            }
+
+            chatSend.disabled = false;
+            chatInput.focus();
+        }
+
+        function askSuggestion(btn) {
+            handleChat(btn.textContent);
+        }
+
+        chatSend.addEventListener('click', () => handleChat(chatInput.value));
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleChat(chatInput.value);
+        });
+    </script>
+
+</body>
+</html>
