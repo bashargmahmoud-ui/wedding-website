@@ -1172,6 +1172,12 @@
                 <p>Batroun, Lebanon — nestled among ancient olive trees and vineyards overlooking the Mediterranean.</p>
             </div>
         </div>
+        <div class="venue-map fade-in" style="max-width: 900px; margin: 40px auto 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.8!2d35.7867!3d34.2542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1521f9c6e0cdb28d%3A0x8a2d3f6c4e2a1b0c!2sIxsir%20Winery!5e0!3m2!1sen!2slb!4v1700000000000" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ixsir Winery Location"></iframe>
+            <div style="text-align: center; padding: 12px 16px; background: var(--off-white);">
+                <a href="https://maps.app.goo.gl/pYJq3WvKYex4SenQ9" target="_blank" rel="noopener" style="color: var(--terracotta); font-family: var(--font-body); font-size: 14px; text-decoration: none; letter-spacing: 1px;">OPEN IN GOOGLE MAPS &rarr;</a>
+            </div>
+        </div>
     </section>
 
     <!-- ============ LANDSCAPE DIVIDER ============ -->
@@ -1340,6 +1346,24 @@
                     </select>
                 </div>
 
+                <div class="form-group guest-count-group hidden" id="plusOneGroup">
+                    <label for="plusOneName">Guest Name(s)</label>
+                    <input type="text" id="plusOneName" name="plusOneName" placeholder="Name(s) of your plus-one(s)">
+                </div>
+
+                <div class="form-group guest-count-group hidden" id="dietaryGroup">
+                    <label for="dietary">Dietary Restrictions</label>
+                    <select id="dietary" name="dietary">
+                        <option value="none">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="halal">Halal</option>
+                        <option value="other">Other (please specify)</option>
+                    </select>
+                    <input type="text" id="dietaryOther" name="dietaryOther" placeholder="Please specify..." style="margin-top: 8px; display: none;">
+                </div>
+
                 <button type="submit" class="rsvp-submit" id="rsvpSubmit">Send RSVP</button>
             </form>
 
@@ -1468,15 +1492,29 @@
         const guestCountGroup = document.getElementById('guestCountGroup');
         const attendRadios = document.querySelectorAll('input[name="attending"]');
 
-        // Show/hide guest count based on attendance
+        const plusOneGroup = document.getElementById('plusOneGroup');
+        const dietaryGroup = document.getElementById('dietaryGroup');
+        const dietarySelect = document.getElementById('dietary');
+        const dietaryOther = document.getElementById('dietaryOther');
+
+        // Show/hide conditional fields based on attendance
         attendRadios.forEach(radio => {
             radio.addEventListener('change', (e) => {
                 if (e.target.value === 'yes') {
                     guestCountGroup.classList.remove('hidden');
+                    plusOneGroup.classList.remove('hidden');
+                    dietaryGroup.classList.remove('hidden');
                 } else {
                     guestCountGroup.classList.add('hidden');
+                    plusOneGroup.classList.add('hidden');
+                    dietaryGroup.classList.add('hidden');
                 }
             });
+        });
+
+        // Show/hide "other" dietary input
+        dietarySelect.addEventListener('change', (e) => {
+            dietaryOther.style.display = e.target.value === 'other' ? 'block' : 'none';
         });
 
         rsvpForm.addEventListener('submit', async (e) => {
@@ -1485,12 +1523,15 @@
             btn.disabled = true;
             btn.textContent = 'Sending...';
 
+            const dietaryVal = document.getElementById('dietary').value;
             const data = {
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
                 email: document.getElementById('email').value.trim(),
                 attending: document.querySelector('input[name="attending"]:checked')?.value || 'no',
                 guestCount: document.getElementById('guestCount').value,
+                plusOneName: document.getElementById('plusOneName').value.trim(),
+                dietary: dietaryVal === 'other' ? document.getElementById('dietaryOther').value.trim() : dietaryVal,
                 submittedAt: new Date().toISOString()
             };
 
