@@ -5,6 +5,11 @@
     "api/rsvp.js": {
       "memory": 128,
       "maxDuration": 10
+    },
+    "api/chat.js": {
+      "memory": 128,
+      "maxDuration": 10,
+      "includeFiles": "api/knowledge.md"
     }
   }
 }

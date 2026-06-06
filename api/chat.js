@@ -2,7 +2,21 @@
 // Environment variables needed:
 //   ANTHROPIC_API_KEY - Your Anthropic API key
 
+import { readFileSync } from 'node:fs';
 import { SYSTEM_PROMPT } from './system-prompt.js';
+
+// Load the source-of-truth knowledge base once per cold start.
+// Edit api/knowledge.md to change what the concierge knows.
+let KNOWLEDGE_BASE = '';
+try {
+  KNOWLEDGE_BASE = readFileSync(new URL('./knowledge.md', import.meta.url), 'utf8');
+} catch (err) {
+  console.error('Could not load knowledge.md:', err);
+}
+
+const FULL_SYSTEM_PROMPT = KNOWLEDGE_BASE
+  ? `${SYSTEM_PROMPT}\n\n# KNOWLEDGE BASE (your only source of facts)\n\n${KNOWLEDGE_BASE}`
+  : SYSTEM_PROMPT;
 
 export default async function handler(req, res) {
   // CORS headers
@@ -57,7 +71,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 300,
-        system: SYSTEM_PROMPT,
+        system: FULL_SYSTEM_PROMPT,
         messages: messages
       })
     });

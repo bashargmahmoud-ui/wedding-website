@@ -1,6 +1,9 @@
 # Vercel
 .vercel
 
+# Local editor / tooling
+.claude
+
 # Dependencies
 node_modules
 
