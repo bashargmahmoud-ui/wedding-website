@@ -377,7 +377,7 @@
             height: 300px;
             background-image: url('landscape-bg.jpg');
             background-size: cover;
-            background-position: center bottom;
+            background-position: center center;
             position: relative;
         }
 
@@ -531,7 +531,64 @@
             font-style: italic;
             line-height: 1.8;
             color: var(--dark-brown);
-            margin-bottom: 48px;
+            margin-bottom: 36px;
+        }
+
+        /* ---- REGISTRY: bank transfer details ---- */
+        .registry-bank {
+            max-width: 460px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid rgba(181, 101, 74, 0.2);
+            border-radius: 16px;
+            padding: 32px 30px;
+            box-shadow: 0 4px 20px rgba(74, 55, 40, 0.06);
+        }
+
+        .registry-bank-intro {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--dark-brown);
+            margin-bottom: 20px;
+        }
+
+        .registry-bank-details {
+            margin: 0;
+            text-align: left;
+        }
+
+        .registry-bank-details > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(181, 101, 74, 0.12);
+        }
+
+        .registry-bank-details > div:last-child {
+            border-bottom: none;
+        }
+
+        .registry-bank-details dt {
+            font-family: var(--font-heading);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--olive);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .registry-bank-details dd {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            color: var(--dark-brown);
+            text-align: right;
+            word-break: break-all;
+            user-select: all;
         }
 
         .registry-buttons {
@@ -1072,10 +1129,10 @@
         }
 
         .venue-overview p {
-            font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 300;
-            font-style: italic;
+            font-family: var(--font-body);
+            font-size: 17px;
+            font-weight: 400;
+            font-style: normal;
             line-height: 1.9;
             color: var(--dark-brown);
         }
@@ -1086,8 +1143,13 @@
             font-size: clamp(28px, 4vw, 40px);
             color: var(--terracotta);
             text-align: center;
-            margin: 72px 0 8px;
+            margin: 72px 0 6px;
             font-weight: 400;
+        }
+
+        /* Wavy underline beneath the "Where to Stay" subhead, matching section titles */
+        .wavy-divider.wavy-divider--subhead {
+            margin: 0 auto 22px;
         }
 
         .travel-subnote {

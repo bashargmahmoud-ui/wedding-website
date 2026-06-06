@@ -13,8 +13,9 @@
 - **Couple:** Caline & Bashar
 - **Wedding date:** Thursday, 3 September 2026
 - **Venue:** The Margi Farm — Athens, Greece
-- **Ceremony:** 6:00 PM — among the olive groves and vineyards of The Margi Farm
-- **Reception:** 6:30 PM — farm-to-table dining under festoon lights
+- **Ceremony:** 6:30 PM — beneath the century-old olive trees of The Margi Farm
+- **Reception:** 7:15 PM — drinks and celebration under festoon lights as the evening begins
+- **Dinner & Party:** Dinner, dancing, and celebration under the stars — the party goes until 4:00 AM
 - **Dress code:** Formal attire. It's a warm September evening, so light, breathable fabrics are recommended. The celebration is outdoors on a farm.
 - **Setting:** An outdoor celebration among century-old olive trees and vineyards, lit by festoon lights.
 
@@ -44,7 +45,7 @@
 
 ## Travel — Getting Around
 
-- Taxis and the **FreeNow** app are everywhere, and pre-booked transfers are easy to arrange.
+- **Uber** works throughout Athens (it dispatches licensed local taxis), and pre-booked private transfers are easy to arrange in advance.
 - Renting a car is simple — the farm has parking.
 - It's a short drive to the Athens Riviera, and roughly **25–30 minutes** to central Athens.
 
@@ -86,12 +87,20 @@ The couple is finalising detailed recommendations on the website's "Things to Do
 
 ---
 
+## Gifts
+
+Your presence is the greatest gift. For guests who wish to honour the couple with a gift, contributions are welcomed by **bank transfer** — the details are shown in the Registry section of the website:
+- IBAN: AE460260001025656639003
+- Currency: USD
+- SWIFT Code: EBILAEAD
+
+---
+
 ## Not Yet Confirmed / Coming Soon
 
 If a guest asks about any of these, the AI should say the detail isn't confirmed yet and suggest checking back on the website (or asking the couple). Do **not** invent answers for these:
 
-- Gift **registry** links (a registry section exists on the site but links are coming soon).
 - Hotel **room blocks**, negotiated rates, and booking cut-off dates.
 - Detailed, named **"things to do"** recommendations (specific restaurants, beach clubs, tours).
 - Any **shuttle / group transport** arrangements between hotels and the farm.
-- **RSVP deadline**, menu specifics, seating, kids policy, plus-ones, and the detailed run-of-show beyond ceremony (6:00 PM) and reception (6:30 PM).
+- **RSVP deadline**, menu specifics, seating, kids policy, and plus-ones. The schedule so far: ceremony 6:30 PM, reception 7:15 PM, dinner and dancing until 4:00 AM.
