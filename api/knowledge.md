@@ -14,8 +14,7 @@
 - **Wedding date:** Thursday, 3 September 2026
 - **Venue:** The Margi Farm — Athens, Greece
 - **Ceremony:** 6:30 PM — beneath the century-old olive trees of The Margi Farm
-- **Reception:** 7:15 PM — drinks and celebration under festoon lights as the evening begins
-- **Dinner & Party:** Dinner, dancing, and celebration under the stars — the party goes until 4:00 AM
+- **Dinner & Party:** 7:15 PM — drinks, dinner, and dancing under festoon lights and the stars; the celebration goes until 4:00 AM
 - **Dress code:** Formal attire. It's a warm September evening, so light, breathable fabrics are recommended. The celebration is outdoors on a farm.
 - **Setting:** An outdoor celebration among century-old olive trees and vineyards, lit by festoon lights.
 
@@ -74,16 +73,53 @@ These are the couple's favourite suggestions. Room blocks and booking details ar
 
 ---
 
-## Things to Do in Athens & Greece
+## What to See in Athens & Greece
 
-The couple is finalising detailed recommendations on the website's "Things to Do" page. High-level highlights nearby:
+All of the recommendations below are on the website's "Your Guide to Greece" page. High-level highlights nearby:
 
 - **Ancient Athens:** The Acropolis & Parthenon, the Acropolis Museum, and the Ancient Agora — the heart of the classical city.
 - **Old Town & Markets:** Plaka and Monastiraki — winding lanes, tavernas, rooftop views of the Acropolis, and the flea market.
 - **Athens Riviera:** Vouliagmeni, Glyfada, and Lake Vouliagmeni — beaches, beach clubs, and seaside dining minutes from the venue.
 - **Cape Sounion:** The clifftop Temple of Poseidon at sunset, about 45 minutes south along the coast.
 - **Islands & day trips:** The Saronic islands (Aegina, Hydra, Poros) by ferry, or trips to Delphi and Nafplio.
-- **Food & drink:** Greek mezze, fresh seafood, and the farm-to-table cuisine of The Margi.
+
+## Where to Eat (curated picks on the "Your Guide to Greece" page)
+
+Athens Riviera (near the venue):
+- **Pelagos** (Vouliagmeni) — Michelin-starred Mediterranean & seafood at the Four Seasons Astir Palace; special-occasion, $$$.
+- **Ithaki** (Vouliagmeni) — glamorous seafood over the bay; romantic at sunset, $$$.
+- **Moorings** (Astir Marina, Vouliagmeni) — relaxed marina Mediterranean; great for a long lunch, $$.
+- **Mylos Glyfada** (Glyfada) — stylish Mediterranean–Asian and champagne bar, $$$.
+
+Central Athens:
+- **Strofi** (Acropolis/Makrigianni) — classic Greek with a rooftop Parthenon view; an institution since 1975, $$$.
+- **Mani Mani** (Koukaki) — refined Greek inspired by the Mani region, $$.
+- **Ta Karamanlidika tou Fani** (Psyrri) — deli/meze, cured meats & cheeses; great for groups, $$.
+- **Scholarhio / Ouzeri Kouklis** (Plaka) — beloved ouzeri since 1935; trays of mezedes, $.
+- **Klimataria** (Psyrri) — traditional taverna since 1927 with live rembetiko music, $$.
+
+## Where to Party (curated picks on the "Your Guide to Greece" page)
+
+Coast (beach clubs & seaside bars, in full swing in early September):
+- **Island Athens Riviera** (Varkiza) — legendary cliffside beach club with DJ sets, $$$.
+- **Bolivar Beach Bar** (Alimos) — big, popular beach club with a sandy dancefloor, $$.
+- **Astir Beach** (Vouliagmeni) — iconic luxury beach club; the 40Forty bar, $$$.
+- **Balux Café** (Glyfada) — relaxed seaside lounge with DJ sets, $$.
+
+City (rooftops & cocktail bars):
+- **Line** (central Athens) — No. 8 in The World's 50 Best Bars 2025; farm-to-glass cocktails, $$$.
+- **The Clumsies** (near Syntagma) — long-running World's 50 Best cocktail bar, $$$.
+- **Baba au Rum** (Psiri) — No. 27 in The World's 50 Best Bars 2025; rum specialists, $$.
+- **A for Athens** (Monastiraki) — rooftop cocktail bar with an Acropolis view, $$.
+
+## How to Get a Visa
+
+Greece is in the EU's Schengen Area; requirements depend on nationality (full guide on the website's "Your Guide to Greece" page):
+- **No visa needed** for EU/EEA/Swiss citizens and visa-exempt nationals (US, UK, Canada, Australia, and many others) — up to 90 days in any 180-day period for non-EU visitors.
+- **ETIAS** (travel authorisation, not a visa) is expected to launch in late 2026 with a transitional grace period, so it is **not expected to be required for early-September 2026 travel** — guests should check the official EU site (travel-europe.europa.eu/etias) closer to the trip.
+- **Schengen short-stay (Type C) visa** is required for non-exempt nationalities; apply at the Greek embassy/consulate or visa centre 6–8 weeks ahead (the wedding invitation, accommodation, return flights, funds, and travel insurance help).
+- **Passport validity:** valid at least 3 months beyond departure from the Schengen Area, and issued within the last 10 years.
+- Guests should always verify requirements for their own nationality via official sources.
 
 ---
 
@@ -101,6 +137,5 @@ Your presence is the greatest gift. For guests who wish to honour the couple wit
 If a guest asks about any of these, the AI should say the detail isn't confirmed yet and suggest checking back on the website (or asking the couple). Do **not** invent answers for these:
 
 - Hotel **room blocks**, negotiated rates, and booking cut-off dates.
-- Detailed, named **"things to do"** recommendations (specific restaurants, beach clubs, tours).
 - Any **shuttle / group transport** arrangements between hotels and the farm.
-- **RSVP deadline**, menu specifics, seating, kids policy, and plus-ones. The schedule so far: ceremony 6:30 PM, reception 7:15 PM, dinner and dancing until 4:00 AM.
+- **RSVP deadline**, menu specifics, seating, kids policy, and plus-ones. The schedule so far: ceremony 6:30 PM, then dinner and dancing from 7:15 PM until 4:00 AM.

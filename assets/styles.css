@@ -142,6 +142,28 @@
             width: 100%;
         }
 
+        /* Header call-to-action button */
+        .nav-cta {
+            font-family: var(--font-heading);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--terracotta);
+            text-decoration: none;
+            padding: 9px 24px;
+            border-radius: 50px;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark-brown);
+            transform: translateY(-1px);
+            color: var(--white);
+        }
+
         /* Mobile hamburger */
         .hamburger {
             display: none;
@@ -224,7 +246,18 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--olive);
-            margin-bottom: 40px;
+            margin-bottom: 28px;
+        }
+
+        .hero-welcome {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: clamp(16px, 2.2vw, 20px);
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--dark-brown);
+            max-width: 540px;
+            margin: 0 auto 36px;
         }
 
         .countdown {
@@ -1002,11 +1035,14 @@
         .attendance-options {
             display: flex;
             gap: 12px;
+            align-items: stretch;
         }
 
         .attendance-option {
-            flex: 1;
+            flex: 1 1 0;
+            min-width: 0;
             position: relative;
+            display: flex;
         }
 
         .attendance-option input[type="radio"] {
@@ -1197,4 +1233,20 @@
         .page-back {
             text-align: center;
             margin-top: 56px;
+        }
+
+        /* Guide cards: small neighbourhood / price meta line */
+        .card-meta {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--olive);
+            margin-bottom: 10px;
+        }
+
+        /* Extra top spacing when stacking multiple guide sections */
+        .guide-section {
+            padding-top: 40px;
         }
