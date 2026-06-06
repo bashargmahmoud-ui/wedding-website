@@ -190,7 +190,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(180deg, var(--golden) 0%, var(--golden-light) 40%, var(--white) 100%);
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--cream) 40%, var(--white) 100%);
             overflow: hidden;
             text-align: center;
             padding: 60px 24px;
@@ -205,7 +205,7 @@
             max-width: 1400px;
             height: auto;
             pointer-events: none;
-            opacity: 0.9;
+            opacity: 0.45;
         }
 
         .hero-content {
@@ -321,12 +321,13 @@
         }
 
         .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(36px, 5vw, 52px);
+            font-family: var(--font-heading);
+            font-size: clamp(34px, 5vw, 50px);
             color: var(--terracotta);
             text-align: center;
             margin-bottom: 16px;
-            font-weight: 400;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         .section-subtitle {
@@ -342,13 +343,22 @@
         /* Wavy divider — inspired by the terracotta scalloped borders */
         .wavy-divider {
             text-align: center;
-            margin: 0 auto 60px;
+            margin: 0 auto 56px;
             overflow: hidden;
         }
 
+        /* Minimalist hairline replaces the decorative squiggle */
         .wavy-divider svg {
-            width: 200px;
-            height: 20px;
+            display: none;
+        }
+
+        .wavy-divider::after {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 1px;
+            margin: 0 auto;
+            background: var(--terracotta-light);
         }
 
         /* ---- WEDDING DETAILS ---- */
@@ -372,12 +382,6 @@
         .detail-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(74, 55, 40, 0.08);
-        }
-
-        .detail-icon {
-            font-size: 32px;
-            margin-bottom: 20px;
-            display: block;
         }
 
         .detail-card h3 {
@@ -1152,10 +1156,11 @@
         }
 
         .rsvp-success h3 {
-            font-family: var(--font-display);
-            font-size: 32px;
+            font-family: var(--font-heading);
+            font-size: 30px;
             color: var(--terracotta);
             margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         .rsvp-success p {
@@ -1192,12 +1197,13 @@
 
         /* ---- TRAVEL: where to stay ---- */
         .travel-subhead {
-            font-family: var(--font-display);
-            font-size: clamp(28px, 4vw, 40px);
+            font-family: var(--font-heading);
+            font-size: clamp(26px, 4vw, 38px);
             color: var(--terracotta);
             text-align: center;
             margin: 72px 0 6px;
-            font-weight: 400;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         /* Wavy underline beneath the "Where to Stay" subhead, matching section titles */
