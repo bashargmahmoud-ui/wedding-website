@@ -18,14 +18,42 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { firstName, lastName, email, attending, guestCount, submittedAt } = req.body;
+    const { firstName, lastName, email, attending, guestCount, welcomeDinner, submittedAt } = req.body;
 
     if (!firstName || !lastName || !email || !attending) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
     // ---- Write to Notion ----
-    const notionResponse = await fetch('https://api.notion.com/v1/pages', {
+    // Base properties that always exist in the RSVP database.
+    const baseProperties = {
+      'Guest Name': {
+        title: [{ text: { content: `${firstName} ${lastName}` } }]
+      },
+      'Email': {
+        email: email
+      },
+      'Attending': {
+        select: { name: attending === 'yes' ? 'Yes' : 'No' }
+      },
+      'Number of Guests': {
+        number: attending === 'yes' ? parseInt(guestCount) || 1 : 0
+      },
+      'Submitted At': {
+        date: { start: submittedAt || new Date().toISOString() }
+      }
+    };
+
+    // Optional property — requires a "Welcome Dinner" Select column (Yes/No)
+    // in the Notion database. If that column doesn't exist yet, Notion rejects
+    // the whole write, so we retry without it (below) to never lose an RSVP.
+    const welcomeProperty = {
+      'Welcome Dinner': {
+        select: { name: (attending === 'yes' && welcomeDinner === 'yes') ? 'Yes' : 'No' }
+      }
+    };
+
+    const postToNotion = (properties) => fetch('https://api.notion.com/v1/pages', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.NOTION_API_KEY}`,
@@ -34,30 +62,23 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         parent: { database_id: process.env.NOTION_DATABASE_ID },
-        properties: {
-          'Guest Name': {
-            title: [{ text: { content: `${firstName} ${lastName}` } }]
-          },
-          'Email': {
-            email: email
-          },
-          'Attending': {
-            select: { name: attending === 'yes' ? 'Yes' : 'No' }
-          },
-          'Number of Guests': {
-            number: attending === 'yes' ? parseInt(guestCount) || 1 : 0
-          },
-          'Submitted At': {
-            date: { start: submittedAt || new Date().toISOString() }
-          }
-        }
+        properties
       })
     });
 
+    let notionResponse = await postToNotion({ ...baseProperties, ...welcomeProperty });
+
     if (!notionResponse.ok) {
-      const err = await notionResponse.text();
-      console.error('Notion error:', err);
-      return res.status(500).json({ error: 'Failed to save to Notion' });
+      const firstErr = await notionResponse.text();
+      console.error('Notion error (with Welcome Dinner):', firstErr);
+      // Fallback: save the core RSVP without the optional Welcome Dinner property.
+      notionResponse = await postToNotion(baseProperties);
+      if (!notionResponse.ok) {
+        const err = await notionResponse.text();
+        console.error('Notion error (base):', err);
+        return res.status(500).json({ error: 'Failed to save to Notion' });
+      }
+      console.warn('Saved RSVP without "Welcome Dinner" — add a "Welcome Dinner" Select column (Yes/No) to the Notion database to capture it.');
     }
 
     // ---- Write to Google Sheets (optional) ----

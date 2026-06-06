@@ -12,6 +12,7 @@
 
 - **Couple:** Caline & Bashar
 - **Wedding date:** Thursday, 3 September 2026
+- **Welcome dinner (pre-wedding):** The evening before — Wednesday, 2 September 2026 in Athens. All wedding guests are warmly invited; the exact time, venue, and dress code are still being confirmed. Guests can RSVP for it on the website (there's a Welcome Dinner question in the RSVP form).
 - **Venue:** The Margi Farm — Athens, Greece
 - **Ceremony:** 6:30 PM — beneath the century-old olive trees of The Margi Farm
 - **Dinner & Party:** 7:15 PM — drinks, dinner, and dancing under festoon lights and the stars; the celebration goes until 4:00 AM
@@ -137,5 +138,6 @@ Your presence is the greatest gift. For guests who wish to honour the couple wit
 If a guest asks about any of these, the AI should say the detail isn't confirmed yet and suggest checking back on the website (or asking the couple). Do **not** invent answers for these:
 
 - Hotel **room blocks**, negotiated rates, and booking cut-off dates.
+- The **welcome dinner** time, venue, and dress code (the date is the evening before — Wednesday, 2 September 2026).
 - Any **shuttle / group transport** arrangements between hotels and the farm.
 - **RSVP deadline**, menu specifics, seating, kids policy, and plus-ones. The schedule so far: ceremony 6:30 PM, then dinner and dancing from 7:15 PM until 4:00 AM.

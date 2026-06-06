@@ -222,6 +222,14 @@
                     <input type="text" id="dietaryOther" name="dietaryOther" placeholder="Please specify..." style="margin-top: 8px; display: none;">
                 </div>
 
+                <div class="form-group guest-count-group hidden" id="welcomeDinnerGroup">
+                    <label for="welcomeDinner">Will you join us for the Welcome Dinner the night before? <a href="#welcome-dinner" style="font-weight:400; text-transform:none; letter-spacing:0;">(see details below)</a></label>
+                    <select id="welcomeDinner" name="welcomeDinner">
+                        <option value="yes" selected>Yes, I&rsquo;ll be there</option>
+                        <option value="no">No, I can&rsquo;t make it</option>
+                    </select>
+                </div>
+
                 <button type="submit" class="rsvp-submit" id="rsvpSubmit">Send RSVP</button>
             </form>
 
@@ -230,6 +238,39 @@
                 <div class="rsvp-success-icon">&#127881;</div>
                 <h3>Thank You!</h3>
                 <p id="rsvpSuccessMsg">We can't wait to celebrate with you in Athens!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WELCOME DINNER ============ -->
+    <section class="section" id="welcome-dinner">
+        <h2 class="section-title fade-in">Welcome Dinner</h2>
+        <div class="wavy-divider fade-in">
+            <svg viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10 Q 10 0, 20 10 T 40 10 T 60 10 T 80 10 T 100 10 T 120 10 T 140 10 T 160 10 T 180 10 T 200 10" stroke="#B5654A" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+        </div>
+        <p class="things-intro fade-in">The night before we say &ldquo;I do,&rdquo; join us for a relaxed welcome dinner to kick off the celebrations. All of our guests are warmly invited &mdash; let us know you&rsquo;re coming in the RSVP above.</p>
+        <!-- TODO (Caline & Bashar): confirm the welcome dinner time, venue, and dress code. -->
+        <div class="details-grid" style="max-width: 900px; margin: 48px auto 0;">
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#128197;</span>
+                <h3>When</h3>
+                <p class="detail-highlight">Wednesday, September 2, 2026</p>
+                <p>The evening before the wedding.</p>
+                <span class="coming-soon">Time coming soon</span>
+            </div>
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#128205;</span>
+                <h3>Where</h3>
+                <p class="detail-highlight">Athens, Greece</p>
+                <span class="coming-soon">Venue coming soon</span>
+            </div>
+            <div class="detail-card fade-in">
+                <span class="detail-icon" aria-hidden="true">&#127863;</span>
+                <h3>Dress Code</h3>
+                <p class="detail-highlight">Relaxed &amp; festive</p>
+                <span class="coming-soon">Details coming soon</span>
             </div>
         </div>
     </section>
@@ -367,6 +408,7 @@
 
         const plusOneGroup = document.getElementById('plusOneGroup');
         const dietaryGroup = document.getElementById('dietaryGroup');
+        const welcomeDinnerGroup = document.getElementById('welcomeDinnerGroup');
         const dietarySelect = document.getElementById('dietary');
         const dietaryOther = document.getElementById('dietaryOther');
 
@@ -377,10 +419,12 @@
                     guestCountGroup.classList.remove('hidden');
                     plusOneGroup.classList.remove('hidden');
                     dietaryGroup.classList.remove('hidden');
+                    welcomeDinnerGroup.classList.remove('hidden');
                 } else {
                     guestCountGroup.classList.add('hidden');
                     plusOneGroup.classList.add('hidden');
                     dietaryGroup.classList.add('hidden');
+                    welcomeDinnerGroup.classList.add('hidden');
                 }
             });
         });
@@ -403,6 +447,7 @@
                 email: document.getElementById('email').value.trim(),
                 attending: document.querySelector('input[name="attending"]:checked')?.value || 'no',
                 guestCount: document.getElementById('guestCount').value,
+                welcomeDinner: (document.querySelector('input[name="attending"]:checked')?.value === 'yes') ? document.getElementById('welcomeDinner').value : 'no',
                 plusOneName: document.getElementById('plusOneName').value.trim(),
                 dietary: dietaryVal === 'other' ? document.getElementById('dietaryOther').value.trim() : dietaryVal,
                 submittedAt: new Date().toISOString()
