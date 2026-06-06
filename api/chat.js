@@ -3,15 +3,31 @@
 //   ANTHROPIC_API_KEY - Your Anthropic API key
 
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { SYSTEM_PROMPT } from './system-prompt.js';
 
 // Load the source-of-truth knowledge base once per cold start.
 // Edit api/knowledge.md to change what the concierge knows.
+//
+// NOTE: do NOT use import.meta.url here. Vercel transpiles these functions to
+// CommonJS, where import.meta is a syntax error that crashes the function.
+// At runtime the working directory is the task root (/var/task) and
+// knowledge.md is shipped alongside via "includeFiles" in vercel.json, so we
+// resolve it from process.cwd() instead.
 let KNOWLEDGE_BASE = '';
-try {
-  KNOWLEDGE_BASE = readFileSync(new URL('./knowledge.md', import.meta.url), 'utf8');
-} catch (err) {
-  console.error('Could not load knowledge.md:', err);
+for (const candidate of [
+  join(process.cwd(), 'api', 'knowledge.md'),
+  join(process.cwd(), 'knowledge.md'),
+]) {
+  try {
+    KNOWLEDGE_BASE = readFileSync(candidate, 'utf8');
+    if (KNOWLEDGE_BASE) break;
+  } catch (err) {
+    // not at this path — try the next candidate
+  }
+}
+if (!KNOWLEDGE_BASE) {
+  console.error('Could not load knowledge.md from any known path');
 }
 
 const FULL_SYSTEM_PROMPT = KNOWLEDGE_BASE
