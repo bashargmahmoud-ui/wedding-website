@@ -373,10 +373,21 @@
         .detail-card {
             text-align: center;
             padding: 40px 32px;
-            background: var(--white);
+            background: var(--off-white);
             border: 1px solid rgba(181, 101, 74, 0.15);
             border-radius: 16px;
             transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .detail-card::before {
+            content: '';
+            display: block;
+            height: 44px;
+            margin: 0 auto 14px;
+            background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2044%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M22%2058%20C%2020%2046%2023%2034%2022%208%22%20fill%3D%22none%22%20stroke%3D%22%235B7444%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cg%20fill%3D%22%235B7444%22%3E%3Cpath%20d%3D%22M22%2048%20C%2027%2047%2032%2043%2034%2037%20C%2029%2038%2024%2042%2022%2048%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2036%20C%2027%2035%2032%2031%2034%2025%20C%2029%2026%2024%2030%2022%2036%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2025%20C%2026%2024%2030%2021%2031%2016%20C%2027%2017%2023%2020%2022%2025%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2042%20C%2017%2041%2012%2037%2010%2031%20C%2015%2032%2020%2036%2022%2042%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2030%20C%2017%2029%2012%2025%2010%2019%20C%2015%2020%2020%2024%2022%2030%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2019%20C%2018%2018%2014%2015%2013%2010%20C%2017%2011%2021%2014%2022%2019%20Z%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%227%22%20r%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%2219.5%22%20cy%3D%2253%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%2224.5%22%20cy%3D%2251%22%20r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: auto 44px;
         }
 
         .detail-card:hover {
@@ -448,15 +459,29 @@
         }
 
         .travel-card {
-            padding: 36px 28px;
-            background: var(--white);
-            border-left: 3px solid var(--terracotta-light);
-            border-radius: 0 12px 12px 0;
-            transition: transform 0.3s;
+            position: relative;
+            padding: 40px 32px 32px;
+            background: var(--off-white);
+            border: 1px solid rgba(181, 101, 74, 0.15);
+            border-radius: 14px;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .travel-card::before {
+            content: '';
+            display: block;
+            height: 46px;
+            margin-bottom: 14px;
+            background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2044%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M22%2058%20C%2020%2046%2023%2034%2022%208%22%20fill%3D%22none%22%20stroke%3D%22%235B7444%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cg%20fill%3D%22%235B7444%22%3E%3Cpath%20d%3D%22M22%2048%20C%2027%2047%2032%2043%2034%2037%20C%2029%2038%2024%2042%2022%2048%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2036%20C%2027%2035%2032%2031%2034%2025%20C%2029%2026%2024%2030%2022%2036%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2025%20C%2026%2024%2030%2021%2031%2016%20C%2027%2017%2023%2020%2022%2025%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2042%20C%2017%2041%2012%2037%2010%2031%20C%2015%2032%2020%2036%2022%2042%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2030%20C%2017%2029%2012%2025%2010%2019%20C%2015%2020%2020%2024%2022%2030%20Z%22%2F%3E%3Cpath%20d%3D%22M22%2019%20C%2018%2018%2014%2015%2013%2010%20C%2017%2011%2021%2014%2022%2019%20Z%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%227%22%20r%3D%221.7%22%2F%3E%3Ccircle%20cx%3D%2219.5%22%20cy%3D%2253%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%2224.5%22%20cy%3D%2251%22%20r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: auto 46px;
         }
 
         .travel-card:hover {
-            transform: translateX(4px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 55, 40, 0.07);
+            border-color: rgba(181, 101, 74, 0.28);
         }
 
         .travel-card h3 {
@@ -563,8 +588,8 @@
 
         .registry-message {
             font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 300;
+            font-size: 19px;
+            font-weight: 400;
             font-style: italic;
             line-height: 1.8;
             color: var(--dark-brown);
@@ -583,8 +608,9 @@
         }
 
         .registry-bank-intro {
-            font-family: var(--font-body);
-            font-size: 15px;
+            font-family: var(--font-heading);
+            font-size: 17px;
+            font-style: italic;
             color: var(--dark-brown);
             margin-bottom: 20px;
         }
@@ -1165,7 +1191,8 @@
 
         .rsvp-success p {
             font-family: var(--font-heading);
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: 400;
             color: var(--dark-brown);
             font-style: italic;
         }
@@ -1187,11 +1214,11 @@
         }
 
         .venue-overview p {
-            font-family: var(--font-body);
-            font-size: 17px;
+            font-family: var(--font-heading);
+            font-size: 19px;
             font-weight: 400;
-            font-style: normal;
-            line-height: 1.9;
+            font-style: italic;
+            line-height: 1.8;
             color: var(--dark-brown);
         }
 
@@ -1237,16 +1264,19 @@
             margin: 0 auto;
             text-align: center;
             color: var(--dark-brown);
-            font-size: 18px;
-            line-height: 1.7;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 1.75;
         }
         .coming-soon {
             display: inline-block;
             margin-top: 16px;
             padding: 5px 16px;
-            font-family: var(--font-body);
-            font-size: 11px;
-            font-weight: 700;
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--olive);
