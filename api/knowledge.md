@@ -12,7 +12,7 @@
 
 - **Couple:** Caline & Bashar
 - **Wedding date:** Thursday, 3 September 2026
-- **Welcome dinner (pre-wedding):** The evening before — Wednesday, 2 September 2026 in Athens. All wedding guests are warmly invited; the exact time, venue, and dress code are still being confirmed. Guests can RSVP for it on the website (there's a Welcome Dinner question in the RSVP form).
+- **Welcome dinner (pre-wedding):** The evening before — Wednesday, 2 September 2026 — at **Krabo** (Krabo by the Sea), a beachfront restaurant in Vouliagmeni on the Athens Riviera that is part of The Margi family (same Michelin-starred chef as the wedding venue). All wedding guests are warmly invited; the exact time and dress code are still being confirmed. Guests can RSVP for it on the website (there's a Welcome Dinner question in the RSVP form). Krabo website: https://krabo.gr/
 - **Venue:** The Margi Farm — Athens, Greece
 - **Ceremony:** 6:30 PM — beneath the century-old olive trees of The Margi Farm
 - **Dinner & Party:** 7:15 PM — drinks, dinner, and dancing under festoon lights and the stars; the celebration goes until 4:00 AM
@@ -84,34 +84,32 @@ All of the recommendations below are on the website's "Your Guide to Greece" pag
 - **Cape Sounion:** The clifftop Temple of Poseidon at sunset, about 45 minutes south along the coast.
 - **Islands & day trips:** The Saronic islands (Aegina, Hydra, Poros) by ferry, or trips to Delphi and Nafplio.
 
-## Where to Eat (curated picks on the "Your Guide to Greece" page)
+## Where to Eat (the couple's picks on the "Your Guide to Greece" page)
 
-Athens Riviera (near the venue):
-- **Pelagos** (Vouliagmeni) — Michelin-starred Mediterranean & seafood at the Four Seasons Astir Palace; special-occasion, $$$.
-- **Ithaki** (Vouliagmeni) — glamorous seafood over the bay; romantic at sunset, $$$.
-- **Moorings** (Astir Marina, Vouliagmeni) — relaxed marina Mediterranean; great for a long lunch, $$.
-- **Mylos Glyfada** (Glyfada) — stylish Mediterranean–Asian and champagne bar, $$$.
+- **Pharaoh Athens** (Exarchia) — wood-fired traditional Greek + natural-wine bar (Michelin Bib Gourmand), $$.
+- **Papadakis** (Kolonaki) — refined Aegean island seafood from chef Argiro Barbarigou, $$$.
+- **Ama Laxei stis Nefelis** (Exarchia) — creative Greek meze in a neoclassical schoolhouse with a courtyard, $$.
+- **Dopios Athens** (city centre) — modern Greek mezze with a twist by chef Christoforos Peskias, $$.
+- **Cherchez la Femme** (city centre) — a reimagined Greek kafeneio with regional dishes, seafood and ouzo, $$.
+- **Bird Man** (Syntagma) — Japanese yakitori grill from the Vezené team, $$.
+- **Sardelaki me Thea** (Vouliagmeni) — casual seafood meze with waterfront views, $$.
+- **Labros** (Vouliagmeni) — century-old seaside seafood taverna with bay sunsets, $$$.
+- **Blue Fish** (Vouliagmeni) — contemporary seafood set over the water, $$$.
+- **Akti** (Vouliagmeni) — dockside Mediterranean-Greek with line-caught seafood, $$$.
+- **Wild Poppies** (city centre) — late-night club-restaurant with cocktails and live music, $$.
+- **Balthazar** (Ambelokipi) — glamorous garden bar-restaurant in an 1897 mansion, $$$.
 
-Central Athens:
-- **Strofi** (Acropolis/Makrigianni) — classic Greek with a rooftop Parthenon view; an institution since 1975, $$$.
-- **Mani Mani** (Koukaki) — refined Greek inspired by the Mani region, $$.
-- **Ta Karamanlidika tou Fani** (Psyrri) — deli/meze, cured meats & cheeses; great for groups, $$.
-- **Scholarhio / Ouzeri Kouklis** (Plaka) — beloved ouzeri since 1935; trays of mezedes, $.
-- **Klimataria** (Psyrri) — traditional taverna since 1927 with live rembetiko music, $$.
+## Where to Party (the couple's picks on the "Your Guide to Greece" page)
 
-## Where to Party (curated picks on the "Your Guide to Greece" page)
-
-Coast (beach clubs & seaside bars, in full swing in early September):
-- **Island Athens Riviera** (Varkiza) — legendary cliffside beach club with DJ sets, $$$.
-- **Bolivar Beach Bar** (Alimos) — big, popular beach club with a sandy dancefloor, $$.
-- **Astir Beach** (Vouliagmeni) — iconic luxury beach club; the 40Forty bar, $$$.
-- **Balux Café** (Glyfada) — relaxed seaside lounge with DJ sets, $$.
-
-City (rooftops & cocktail bars):
-- **Line** (central Athens) — No. 8 in The World's 50 Best Bars 2025; farm-to-glass cocktails, $$$.
-- **The Clumsies** (near Syntagma) — long-running World's 50 Best cocktail bar, $$$.
-- **Baba au Rum** (Psiri) — No. 27 in The World's 50 Best Bars 2025; rum specialists, $$.
-- **A for Athens** (Monastiraki) — rooftop cocktail bar with an Acropolis view, $$.
+- **Couleur Locale** (Monastiraki) — all-day rooftop bar with Acropolis views and DJ sets, $$.
+- **Buena Vista** (Monastiraki) — Cuban-themed rooftop social bar with Acropolis views, $$.
+- **Ermou18** (Syntagma) — seventh-floor rooftop café-bar with city & Acropolis views, $$.
+- **Stepa Bar** (Exarchia) — all-day cocktail hangout with street seating, open late, $$.
+- **Feeling Good Bar** (Koukaki) — American-style craft cocktail bar with bar food, $$.
+- **Bluebird Bar** (Syntagma) — cozy pedestrian-square bar with classic cocktails and soul tunes, $$.
+- **The Clumsies** (Syntagma) — World's 50 Best all-day cocktail bar in a neoclassical building, $$$.
+- **Baba au Rum** (Psiri) — World's 50 Best rum-and-cocktail bar with 400+ rums, $$$.
+- **Hippy3** (Pangrati) — tree-shaded all-day café-bar, brunch to cocktails and DJ sets, $$.
 
 ## How to Get a Visa
 
@@ -138,6 +136,6 @@ Your presence is the greatest gift. For guests who wish to honour the couple wit
 If a guest asks about any of these, the AI should say the detail isn't confirmed yet and suggest checking back on the website (or asking the couple). Do **not** invent answers for these:
 
 - Hotel **room blocks**, negotiated rates, and booking cut-off dates.
-- The **welcome dinner** time, venue, and dress code (the date is the evening before — Wednesday, 2 September 2026).
+- The **welcome dinner** time and dress code (it's on Wednesday, 2 September 2026 at Krabo in Vouliagmeni).
 - Any **shuttle / group transport** arrangements between hotels and the farm.
 - **RSVP deadline**, menu specifics, seating, kids policy, and plus-ones. The schedule so far: ceremony 6:30 PM, then dinner and dancing from 7:15 PM until 4:00 AM.

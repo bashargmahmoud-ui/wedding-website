@@ -915,8 +915,29 @@
                 padding: 40px 20px 120px;
             }
 
+            /* Keep hero text within the viewport so the title wraps instead of clipping */
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-location {
+                letter-spacing: 2px;
+            }
+
+            .hero-names {
+                font-size: clamp(30px, 8vw, 54px);
+                line-height: 1.12;
+            }
+
+            /* Cover the whole hero with the backdrop so the golden gradient
+               doesn't show as a yellow band above the (portrait) image */
             .hero-bg {
                 max-width: 100%;
+                top: 0;
+                bottom: auto;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
 
             .countdown {
@@ -947,10 +968,6 @@
         }
 
         @media (max-width: 480px) {
-            .hero-names {
-                font-size: 42px;
-            }
-
             .countdown-number {
                 font-size: 28px;
             }
