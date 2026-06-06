@@ -22,7 +22,7 @@
 <body>
 
     <!-- ============ NAVIGATION ============ -->
-    <nav class="nav" id="nav">
+    <nav class="nav visible" id="nav">
         <div class="nav-inner">
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">Wedding</a></li>
@@ -332,15 +332,7 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        // ---- Sticky Nav ----
-        const nav = document.getElementById('nav');
-        const hero = document.getElementById('hero');
-
-        const navObserver = new IntersectionObserver(([entry]) => {
-            nav.classList.toggle('visible', !entry.isIntersecting);
-        }, { threshold: 0.1 });
-
-        navObserver.observe(hero);
+        // ---- Header is always visible (persistent site nav) ----
 
         // ---- Mobile Menu ----
         const hamburger = document.getElementById('hamburger');
