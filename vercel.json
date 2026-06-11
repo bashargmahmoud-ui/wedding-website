@@ -10,6 +10,10 @@
       "memory": 128,
       "maxDuration": 10,
       "includeFiles": "api/knowledge.md"
+    },
+    "api/guests.js": {
+      "memory": 128,
+      "maxDuration": 10
     }
   }
 }

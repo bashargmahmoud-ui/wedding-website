@@ -153,76 +153,68 @@
             </div>
         </div>
         <div class="rsvp-form-container fade-in">
-            <!-- Form -->
-            <form class="rsvp-form" id="rsvpForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="First name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
-                    </div>
-                </div>
-
+            <!-- STEP 1 — find your invitation -->
+            <form class="rsvp-form" id="lookupForm">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    <label for="firstName">Your name (as on the invitation)</label>
+                    <div class="form-row">
+                        <input type="text" id="firstName" name="firstName" placeholder="First name" autocomplete="given-name" required>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last name" autocomplete="family-name" required>
+                    </div>
                 </div>
+                <button type="submit" class="rsvp-submit" id="lookupSubmit">Find my invitation</button>
+                <p class="rsvp-note" id="lookupMsg" role="status" aria-live="polite"></p>
+            </form>
+
+            <!-- STEP 2 — respond (revealed after a match) -->
+            <form class="rsvp-form is-hidden" id="respondForm">
+                <div class="found-banner" id="foundBanner"></div>
 
                 <div class="form-group">
                     <label>Will you be attending?</label>
-                    <div class="attendance-options">
-                        <div class="attendance-option">
-                            <input type="radio" id="attendYes" name="attending" value="yes" required>
-                            <label for="attendYes">Joyfully Accept</label>
+                    <div class="attendance-row">
+                        <span class="attendee-name" id="guestNameLabel">You</span>
+                        <div class="attendance-options">
+                            <div class="attendance-option">
+                                <input type="radio" id="gYes" name="attendGuest" value="yes" required>
+                                <label for="gYes">Joyfully Accept</label>
+                            </div>
+                            <div class="attendance-option">
+                                <input type="radio" id="gNo" name="attendGuest" value="no">
+                                <label for="gNo">Regretfully Decline</label>
+                            </div>
                         </div>
-                        <div class="attendance-option">
-                            <input type="radio" id="attendNo" name="attending" value="no">
-                            <label for="attendNo">Regretfully Decline</label>
+                    </div>
+                    <div class="attendance-row is-hidden" id="plusOneRow">
+                        <span class="attendee-name" id="plusOneNameLabel"></span>
+                        <div class="attendance-options">
+                            <div class="attendance-option">
+                                <input type="radio" id="pYes" name="attendPlusOne" value="yes">
+                                <label for="pYes">Joyfully Accept</label>
+                            </div>
+                            <div class="attendance-option">
+                                <input type="radio" id="pNo" name="attendPlusOne" value="no">
+                                <label for="pNo">Regretfully Decline</label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group guest-count-group hidden" id="guestCountGroup">
-                    <label for="guestCount">Number of Guests (including yourself)</label>
-                    <select id="guestCount" name="guestCount">
-                        <option value="1">1</option>
-                        <option value="2" selected>2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                <div class="form-group">
+                    <label for="email">Email (for confirmation)</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
                 </div>
 
-                <div class="form-group guest-count-group hidden" id="plusOneGroup">
-                    <label for="plusOneName">Guest Name(s)</label>
-                    <input type="text" id="plusOneName" name="plusOneName" placeholder="Name(s) of your plus-one(s)">
-                </div>
-
-                <div class="form-group guest-count-group hidden" id="dietaryGroup">
-                    <label for="dietary">Dietary Restrictions</label>
-                    <select id="dietary" name="dietary">
-                        <option value="none">None</option>
-                        <option value="vegetarian">Vegetarian</option>
-                        <option value="vegan">Vegan</option>
-                        <option value="gluten-free">Gluten-Free</option>
-                        <option value="halal">Halal</option>
-                        <option value="other">Other (please specify)</option>
-                    </select>
-                    <input type="text" id="dietaryOther" name="dietaryOther" placeholder="Please specify..." style="margin-top: 8px; display: none;">
-                </div>
-
-                <div class="form-group guest-count-group hidden" id="welcomeDinnerGroup">
+                <div class="form-group">
                     <label for="welcomeDinner">Will you join us for the Welcome Dinner the night before? <a href="#welcome-dinner" style="font-weight:400; text-transform:none; letter-spacing:0;">(see details below)</a></label>
                     <select id="welcomeDinner" name="welcomeDinner">
-                        <option value="yes" selected>Yes, I&rsquo;ll be there</option>
-                        <option value="no">No, I can&rsquo;t make it</option>
+                        <option value="yes" selected>Yes, we&rsquo;ll be there</option>
+                        <option value="no">No, we can&rsquo;t make it</option>
                     </select>
                 </div>
 
                 <button type="submit" class="rsvp-submit" id="rsvpSubmit">Send RSVP</button>
+                <button type="button" class="rsvp-back" id="rsvpBack">&larr; Not you? Search again</button>
             </form>
 
             <!-- Success message (hidden by default) -->
@@ -386,89 +378,118 @@
 
         document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-        // ---- RSVP Form ----
-        const rsvpForm = document.getElementById('rsvpForm');
+        // ---- RSVP (two-step, guest-list driven) ----
+        const lookupForm = document.getElementById('lookupForm');
+        const respondForm = document.getElementById('respondForm');
         const rsvpSuccess = document.getElementById('rsvpSuccess');
         const rsvpSuccessMsg = document.getElementById('rsvpSuccessMsg');
-        const guestCountGroup = document.getElementById('guestCountGroup');
-        const attendRadios = document.querySelectorAll('input[name="attending"]');
+        const lookupMsg = document.getElementById('lookupMsg');
+        const foundBanner = document.getElementById('foundBanner');
+        const guestNameLabel = document.getElementById('guestNameLabel');
+        const plusOneRow = document.getElementById('plusOneRow');
+        const plusOneNameLabel = document.getElementById('plusOneNameLabel');
+        const plusOneYes = document.getElementById('pYes');
 
-        const plusOneGroup = document.getElementById('plusOneGroup');
-        const dietaryGroup = document.getElementById('dietaryGroup');
-        const welcomeDinnerGroup = document.getElementById('welcomeDinnerGroup');
-        const dietarySelect = document.getElementById('dietary');
-        const dietaryOther = document.getElementById('dietaryOther');
+        // The resolved invitation, carried into the response step.
+        let invite = { guestName: '', firstName: '', plusOneName: null };
 
-        // Show/hide conditional fields based on attendance
-        attendRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                if (e.target.value === 'yes') {
-                    guestCountGroup.classList.remove('hidden');
-                    plusOneGroup.classList.remove('hidden');
-                    dietaryGroup.classList.remove('hidden');
-                    welcomeDinnerGroup.classList.remove('hidden');
+        function showStep2(data) {
+            const typedFirst = document.getElementById('firstName').value.trim();
+            const typedLast = document.getElementById('lastName').value.trim();
+            invite = {
+                guestName: data.name || `${typedFirst} ${typedLast}`.trim(),
+                firstName: data.firstName || typedFirst,
+                plusOneName: data.plusOneName || null
+            };
+            const first = invite.firstName || 'there';
+            if (invite.plusOneName) {
+                foundBanner.innerHTML = `<span class="ft">Welcome, ${first}!</span><span class="fs">Your invitation includes <strong>${invite.plusOneName}</strong>. Please RSVP for each of you below.</span>`;
+                guestNameLabel.textContent = invite.guestName;
+                plusOneNameLabel.innerHTML = `${invite.plusOneName} <span class="attendee-tag">· your guest</span>`;
+                plusOneRow.classList.remove('is-hidden');
+                plusOneYes.required = true;
+            } else {
+                foundBanner.innerHTML = `<span class="ft">Welcome, ${first}!</span><span class="fs">We&rsquo;re so happy you&rsquo;re here &mdash; just let us know below.</span>`;
+                guestNameLabel.textContent = invite.guestName || 'You';
+                plusOneRow.classList.add('is-hidden');
+                plusOneYes.required = false;
+            }
+            lookupForm.classList.add('is-hidden');
+            respondForm.classList.remove('is-hidden');
+        }
+
+        lookupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            if (!firstName || !lastName) return;
+            const btn = document.getElementById('lookupSubmit');
+            btn.disabled = true; btn.textContent = 'Searching…';
+            lookupMsg.textContent = ''; lookupMsg.classList.remove('error');
+            try {
+                const r = await fetch('/api/guests', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ firstName, lastName })
+                });
+                const data = await r.json();
+                if (data.configured === false) {
+                    // Guest list not set up yet → open RSVP (no gating, no plus-one).
+                    showStep2({ name: `${firstName} ${lastName}`, firstName, plusOneName: null });
+                } else if (data.found) {
+                    showStep2(data);
                 } else {
-                    guestCountGroup.classList.add('hidden');
-                    plusOneGroup.classList.add('hidden');
-                    dietaryGroup.classList.add('hidden');
-                    welcomeDinnerGroup.classList.add('hidden');
+                    lookupMsg.textContent = 'We couldn’t find an invitation under that name. Please enter it exactly as it appears on your invitation, or reach out to us and we’ll gladly help.';
+                    lookupMsg.classList.add('error');
                 }
-            });
+            } catch (err) {
+                console.error('Lookup error:', err);
+                // Never block an RSVP on a lookup failure — fall back to the open form.
+                showStep2({ name: `${firstName} ${lastName}`, firstName, plusOneName: null });
+            } finally {
+                btn.disabled = false; btn.textContent = 'Find my invitation';
+            }
         });
 
-        // Show/hide "other" dietary input
-        dietarySelect.addEventListener('change', (e) => {
-            dietaryOther.style.display = e.target.value === 'other' ? 'block' : 'none';
+        document.getElementById('rsvpBack').addEventListener('click', () => {
+            respondForm.classList.add('is-hidden');
+            lookupForm.classList.remove('is-hidden');
         });
 
-        rsvpForm.addEventListener('submit', async (e) => {
+        respondForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('rsvpSubmit');
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-
-            const dietaryVal = document.getElementById('dietary').value;
-            const data = {
-                firstName: document.getElementById('firstName').value.trim(),
-                lastName: document.getElementById('lastName').value.trim(),
+            const attending = document.querySelector('input[name="attendGuest"]:checked')?.value || 'no';
+            const plusOneAttending = document.querySelector('input[name="attendPlusOne"]:checked')?.value || 'no';
+            btn.disabled = true; btn.textContent = 'Sending…';
+            const payload = {
+                guestName: invite.guestName,
+                firstName: invite.firstName,
                 email: document.getElementById('email').value.trim(),
-                attending: document.querySelector('input[name="attending"]:checked')?.value || 'no',
-                guestCount: document.getElementById('guestCount').value,
-                welcomeDinner: (document.querySelector('input[name="attending"]:checked')?.value === 'yes') ? document.getElementById('welcomeDinner').value : 'no',
-                plusOneName: document.getElementById('plusOneName').value.trim(),
-                dietary: dietaryVal === 'other' ? document.getElementById('dietaryOther').value.trim() : dietaryVal,
+                attending,
+                plusOneName: invite.plusOneName || '',
+                plusOneAttending: invite.plusOneName ? plusOneAttending : 'no',
+                welcomeDinner: document.getElementById('welcomeDinner').value,
                 submittedAt: new Date().toISOString()
             };
-
             try {
                 const response = await fetch('/api/rsvp', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(payload)
                 });
-
-                if (response.ok) {
-                    showSuccess(data);
-                } else {
-                    throw new Error('Server error');
-                }
+                if (!response.ok) throw new Error('Server error');
             } catch (err) {
                 console.error('RSVP error:', err);
-                // Still show success to not frustrate the guest
-                // The error is logged for you to investigate
-                showSuccess(data);
+                // Still confirm to the guest; the error is logged for follow-up.
             }
-        });
-
-        function showSuccess(data) {
-            rsvpForm.style.display = 'none';
+            respondForm.classList.add('is-hidden');
             rsvpSuccess.classList.add('show');
-            if (data.attending === 'yes') {
-                rsvpSuccessMsg.textContent = `We can't wait to celebrate with you in Athens, ${data.firstName}!`;
-            } else {
-                rsvpSuccessMsg.textContent = `We'll miss you, ${data.firstName}! Thank you for letting us know.`;
-            }
-        }
+            const anyYes = attending === 'yes' || (invite.plusOneName && plusOneAttending === 'yes');
+            rsvpSuccessMsg.textContent = anyYes
+                ? `We can’t wait to celebrate with you in Athens, ${invite.firstName || 'friend'}!`
+                : `We’ll miss you, ${invite.firstName || 'friend'}! Thank you for letting us know.`;
+        });
 
         // ---- Chat (Claude API) ----
         const chatMessages = document.getElementById('chatMessages');
