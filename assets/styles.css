@@ -340,6 +340,71 @@
             margin-bottom: 60px;
         }
 
+        /* ---- TIMELINE (weekend at a glance) ---- */
+        .timeline-section {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+
+        .timeline-section .section-subtitle {
+            margin-bottom: 36px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 16%;
+            right: 16%;
+            height: 1px;
+            background: rgba(181, 101, 74, 0.3);
+            z-index: 0;
+        }
+
+        .timeline-step {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 8px;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--terracotta);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 1px rgba(181, 101, 74, 0.35);
+            margin-bottom: 14px;
+        }
+
+        .timeline-when {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--olive);
+            margin-bottom: 2px;
+        }
+
+        .timeline-what {
+            font-family: var(--font-heading);
+            font-size: 17px;
+            color: var(--dark-brown);
+        }
+
         /* Wavy divider — inspired by the terracotta scalloped borders */
         .wavy-divider {
             text-align: center;
@@ -500,7 +565,8 @@
             margin-bottom: 12px;
         }
 
-        .travel-card a {
+        .travel-card a,
+        .detail-card a {
             color: var(--terracotta);
             text-decoration: none;
             font-weight: 400;
@@ -508,7 +574,8 @@
             transition: border-color 0.3s;
         }
 
-        .travel-card a:hover {
+        .travel-card a:hover,
+        .detail-card a:hover {
             border-color: var(--terracotta);
         }
 
@@ -1165,6 +1232,78 @@
             cursor: not-allowed;
             transform: none;
         }
+
+        .rsvp-back {
+            background: none;
+            border: none;
+            color: var(--terracotta);
+            font-family: var(--font-heading);
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            margin-top: 2px;
+            align-self: center;
+        }
+
+        .rsvp-back:hover { color: var(--olive); }
+
+        .rsvp-note {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--olive-light);
+            text-align: center;
+            margin: 4px 0 0;
+        }
+
+        .rsvp-note.error { color: var(--terracotta); }
+
+        /* "Invitation found" banner */
+        .found-banner {
+            background: rgba(91, 116, 68, 0.10);
+            border: 1px solid rgba(91, 116, 68, 0.22);
+            border-radius: 12px;
+            padding: 20px 22px;
+            text-align: center;
+        }
+
+        .found-banner .ft {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 24px;
+            color: var(--olive);
+            margin-bottom: 4px;
+        }
+
+        .found-banner .fs {
+            display: block;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--dark-brown);
+        }
+
+        /* Per-person attendance rows */
+        .attendance-row + .attendance-row { margin-top: 18px; }
+
+        .attendee-name {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 19px;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+
+        .attendee-tag {
+            font-size: 14px;
+            color: var(--terracotta-light);
+            font-style: italic;
+        }
+
+        /* Generic hide utility (distinct from the dimming .guest-count-group.hidden) */
+        .is-hidden { display: none !important; }
 
         .rsvp-success {
             text-align: center;
